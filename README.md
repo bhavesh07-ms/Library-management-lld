@@ -1,5 +1,6 @@
 # Library-management-lld
 design practice for lld 
 UML diagram for overview
-![image](https://github.com/user-attachments/assets/47d08ed6-3fb4-493a-a0e4-59f1b45e851b)
+![image](https://github.com/user-attachments/assets/80eeb59a-9001-4ebb-b15a-1b6ca9e7b042)
+
 
