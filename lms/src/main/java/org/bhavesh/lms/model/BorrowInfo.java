@@ -10,6 +10,7 @@ public class BorrowInfo {
     private Book book;
     private LocalDate borrowDate;
     private int days;
+    private boolean returned;
 
     public BorrowInfo(Book book, int days) {
         this.book = book;
