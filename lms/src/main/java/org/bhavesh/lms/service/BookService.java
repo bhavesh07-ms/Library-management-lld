@@ -6,9 +6,11 @@ import org.bhavesh.lms.model.Library;
 import org.bhavesh.lms.model.Patron;
 import org.bhavesh.lms.repository.Inventory;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class BookService {
     private final Inventory inventory;
-    private  SearchService searchService;
 
     public BookService(Inventory inventory) {
         this.inventory = inventory;
@@ -47,4 +49,23 @@ public class BookService {
         }
     }
 
+    public void getAllBookStatus() {
+        List<Book> borrowed = new ArrayList<>();
+        List<Book> available = new ArrayList<>();
+
+        for (Book book : inventory.getBooks()) {
+            if (book.isBorrowed()) {
+                borrowed.add(book);
+            } else {
+                available.add(book);
+            }
+        }
+
+        System.out.println("Borrowed Books:");
+        borrowed.forEach(book -> System.out.println(book.getTitle() + " - " + book.getIsbn()));
+
+        System.out.println("Available Books:");
+        available.forEach(book -> System.out.println(book.getTitle() + " - " + book.getIsbn()));
+    }
 }
+
